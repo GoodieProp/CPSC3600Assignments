@@ -23,8 +23,8 @@
 #include <string>
 #include <ctime>
 
-int dieRoll();
-int p_Chooser();
+int dieRoll(); // simulates a die roll
+int p_Chooser(); // chooses what player is the user
 int user_Turn(int &u_score);
 int comp_Turn(int &c_score);
 
