@@ -10,10 +10,10 @@
 
 // Initialized Functions
 int showMenu();
-void seatingMap();
 
 // Initialized Variables
 const int ROWS = 15;
+
 const int columns = 30;
 const int SEATS_PER_ROW = 30;
 const int FRONT_ROW_COST = 50;
@@ -28,10 +28,9 @@ int main() {
     for(int i=0; i< ROWS; i++)
         for(int j=0; j<SEATS_PER_ROW; j++)
             concertSeats[i][j]= seatEmpty;
-
     int uChoice;
     int totalSales = 0;
-
+    
     do {
         uChoice = showMenu();
 
@@ -62,35 +61,41 @@ int main() {
 				*/
 
                 int row, col;
-                std::cout << "Buy tickets\n"
                 char choice;
 
                 do {
-                    std::cout << "Enter the row you want to sit in: ";
+                    std::cout << "Enter the row you want to sit in: " << std::endl;
                     std::cin >> row;
+                    row -= 1;
                     std::cout << "Enter the column you want to sit in: ";
                     std::cin >> col;
+                    col -= 1;
 
                     if (concertSeats[row][col] == seatTaken) {
                         std::cout << "This seat is taken. Please select another seat.";
                         std::cout << std::endl;
                     } else {
+                        row += 1;
+                        col += 1;
                         if (row < 8) {
+                            std::cout << FRONT_ROW_COST;
                             totalSales += FRONT_ROW_COST;
+                            concertSeats[row-1][col-1] = '*';
                         } else if (row >= 8 && row <= 15) {
+                            std::cout << BACK_ROW_COST;
                             totalSales += BACK_ROW_COST;
+                            concertSeats[row-1][col-1] = '*';
                         }
                     }
 
-                    std::cout << "Tickets costs:"
 
                 } while (choice == 'Y');
 
                 break;
             case 3:
 				//TO DO: code for displaying total sales
-                std::cout << "Total Sales: \n";
-				std::cout << totalSales << std::endl;
+                std::cout << "Total Sales: $" << totalSales << std::endl;
+
                 break;
             case 4:
 				/*TO DO: code for displaying seat info, e.g.
