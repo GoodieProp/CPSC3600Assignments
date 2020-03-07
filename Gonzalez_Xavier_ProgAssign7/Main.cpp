@@ -49,11 +49,10 @@ int main() {
 	std::cout << "Current Loan Balance:\t\t$" << lA.getBalance() << std::endl;
 
 	// INTEREST RATE FUNCTION
-	int interest = lA.getInterestRate();
-	std::cout << "Interest Rate: " << interest << "%" << std::endl;
+	std::cout << "Interest Rate: " << lA.getInterestRate() << "%" << std::endl;
 
 	// PAY BALANCE FUNCTION
-	std::cout << "$\n300 payment to Loan Balance." << std::endl;
+	std::cout << "\n$300 payment to Loan Balance." << std::endl;
 	lA.PayBalance(300);
 	std::cout << "Current Loan Balance:\t\t$" << lA.getBalance() << std::endl;
 
