@@ -61,10 +61,7 @@ int main() {
 	lA.CalcInterest();
 	std::cout << "Current Loan Balance:\t\t$" << lA.getBalance() << std::endl;
 
-
-
-
-
+	std::cout << "****************************************************" << std::endl;
 }
 
 
