@@ -1,0 +1,59 @@
+<script type="text/javascript">
+/*
+Xavier Gonzalez
+Applied Programming Languages
+March 24th, 2020
+
+Programming Assignment 8
+Gonzalez_Xavier_ProgAssign8
+*/
+
+// Function to find the longest Word containing the letter 'e'
+function findLongestEWord(eLongest) {
+    let eWordL = "";
+    for (let i = 0; i < eLongest.length; i++) {
+        if (eWordL.length < eLongest[i].length) {
+            eWordL = eLongest[i];
+        }
+    }
+    return eWordL;
+}
+// Initialized Array
+let eWords = []; 
+
+// Asks user for a line of string
+let words = prompt("Enter a string: ");
+alert("User inputted string: " + words);
+
+// splits the words with a white space
+words = words.split(" ");
+
+/*  For loop that iterates the variables words
+    and finds any word that contains the letter 'e'.
+    When found it will be pushed into the eWords array.
+*/
+for (let i = 0; i < words.length; i++) {
+    let word = words[i];
+    for (let j = 0; j < word.length; j++) {
+        if (word[j] === "e") {
+            eWords.push(word);
+            break;
+        }
+    }
+}
+
+/*  Initialized variable to a function that finds the
+    longest word that contains the letter 'e'
+*/
+let longest = findLongestEWord(eWords);
+
+/*
+    Displays:
+    Number of words that contian the letter 'e'
+    Longest Word that contains the character 'e'
+    # of characters in the Longest Word
+*/
+alert("# of words that contain the character 'e': " + eWords.length);
+alert("Longest word that contains the character 'e': " + longest);
+alert("# of characters in the Longest Word: " + longest.length);
+</script>
